@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --archive-cream: #F6F2E9;
+    --archive-paper: #EFE8DC;
+    --archive-ink: #121514;
+    --archive-charcoal: #1A1E1C;
+    --archive-forest: #182A1E;
+    --archive-rust: #9E4224;
+    --archive-amber: #D27230;
+  }
+
+  body {
+    background-color: #0E1110;
+    color: #F6F2E9;
+    font-family: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom tactile scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #141716;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #384334;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D27230;
+  }
+}
+
+/* Vertical Spine Text */
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Archival book cloth texture */
+.book-cloth {
+  background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+/* Laid paper subtle watermark lines */
+.paper-laid {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.02) 0px,
+      rgba(0, 0, 0, 0.02) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+}
+
+/* Halftone specimen pattern */
+.halftone-specimen {
+  background-image: radial-gradient(rgba(20, 23, 21, 0.15) 1px, transparent 0);
+  background-size: 4px 4px;
+}
+
+/* Embossed spine groove */
+.spine-groove {
+  box-shadow: 
+    inset 1px 0 2px rgba(255, 255, 255, 0.15),
+    inset -1px 0 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Archival Red Ink Stamp */
+.archive-stamp {
+  border: 1.5px solid rgba(196, 61, 48, 0.8);
+  color: rgba(196, 61, 48, 0.95);
+  transform: rotate(-3deg);
+  letter-spacing: 0.15em;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+}
+
+/* Parabolic path hint */
+.parabolic-arc {
+  stroke-dasharray: 4, 4;
+  animation: arcDash 1.5s linear infinite;
+}
+
+@keyframes arcDash {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+
+/* Laser scan line */
+.scan-laser {
+  background: linear-gradient(180deg, rgba(210, 114, 48, 0) 0%, rgba(210, 114, 48, 0.4) 70%, #D27230 100%);
+  box-shadow: 0 0 15px #D27230, 0 0 30px rgba(210, 114, 48, 0.6);
+}
